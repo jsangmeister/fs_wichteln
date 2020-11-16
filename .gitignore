@@ -1,0 +1,4 @@
+.venv
+.vscode
+server/config.py
+server/database.sqlite3

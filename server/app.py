@@ -119,5 +119,9 @@ def try_send_mail(msg):
         )
 
 
+def get_app():
+    return app
+
+
 if __name__ == "__main__":
     app.run()

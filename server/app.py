@@ -1,6 +1,7 @@
 import sqlite3 as sql
 import re
 import smtplib
+import os
 
 from flask import render_template, request
 from flask_mail import Mail, Message
@@ -31,14 +32,15 @@ COLORS = [
 ]
 LETTERS = "ABDEFGHKLMNOPRSTUVWZ"
 
+CONFIG_FILE = os.path.join(os.path.dirname(__file__), 'config.py')
 
 app = Flask(__name__)
 try:
-    app.config.from_pyfile("config.py")
+    app.config.from_pyfile(CONFIG_FILE)
 except FileNotFoundError:
     app.logger.warning("Didn't find a config.py. Copied the template to config.py")
-    copyfile("config.py.tpl", "config.py")
-    app.config.from_pyfile("config.py")
+    copyfile(CONFIG_FILE + ".tpl", CONFIG_FILE)
+    app.config.from_pyfile(CONFIG_FILE)
 CORS(app)
 mail = Mail(app)
 

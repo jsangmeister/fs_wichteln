@@ -32,15 +32,8 @@ COLORS = [
 ]
 LETTERS = "ABDEFGHKLMNOPRSTUVWZ"
 
-CONFIG_FILE = os.path.join(os.path.dirname(__file__), 'config.py')
-
 app = Flask(__name__)
-try:
-    app.config.from_pyfile(CONFIG_FILE)
-except FileNotFoundError:
-    app.logger.warning("Didn't find a config.py. Copied the template to config.py")
-    copyfile(CONFIG_FILE + ".tpl", CONFIG_FILE)
-    app.config.from_pyfile(CONFIG_FILE)
+app.config.from_pyfile("config.py")
 CORS(app)
 mail = Mail(app)
 

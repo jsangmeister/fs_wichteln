@@ -5,7 +5,7 @@ $(() => {
         var val = email.val();
         if (email.is(':valid') && val.match(/^[a-z]+@uos.de$/)) {
             $.ajax({
-                url: 'http://127.0.0.1:5000/request',
+                url: 'http://185.228.136.118:5000/request',
                 type: 'POST',
                 data: JSON.stringify({email: val}),
                 contentType: 'application/json; charset=utf-8',

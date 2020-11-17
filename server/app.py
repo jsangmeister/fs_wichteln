@@ -98,7 +98,7 @@ def order():
         subject="FS-Wichteln: Buchstabe und Farbe",
         recipients=[email],
         body=f"Buchstabe: {letter}\nFarbe: {color}",
-        sender=email,
+        sender="Fachschaft Mathematik/Informatik <fsmathinf@uos.de>",
     )
     try_send_mail(msg)
     return {}

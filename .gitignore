@@ -2,3 +2,4 @@
 .vscode
 server/config.py
 server/database.sqlite3
+__pycache__

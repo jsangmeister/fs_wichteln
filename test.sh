@@ -1,1 +1,1 @@
-curl -H "Content-Type: application/json" http://185.228.136.118:5000/request -d '{"email": "jsangmeister@uos.de"}'
+curl -H "Content-Type: application/json" http://localhost:5000/request -d '{"email": "jsangmeister@uos.de"}'
